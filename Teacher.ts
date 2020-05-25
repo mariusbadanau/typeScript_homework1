@@ -1,31 +1,11 @@
 import { Student } from "./Student";
+import { User } from "./User";
 
-export class Teacher implements IUsers {
-    name: string;
-    email: string;
-    password: string;
-    assignment:string;
-    student:Student;
-    
-    constructor(name:string, email:string, assignment:string){
-        this.name = name;
-        this.email = email;
-        this.assignment = assignment;
-        
-    }
+export class Teacher extends User {
 
-    register(): void {
-        console.log("Teacher " + this.name +" has registered with succes ussing email " +this.email)
-    }
-    login(): void {
-        console.log("Teacher " + this.name +" login with succes")
-    }
-    delete(): void {
-        console.log("Teacher " + this.name +" deleted with succes")
-    }
-   
-    getStudents(student){
-        console.log("Get student name = " + student.name + " with email = " + student.email);
+    students: string[]=['student1', 'student2', 'student3'];
+    getStudents(){
+        console.log(`Get Students: ${this.students}`);
     }
 
 }

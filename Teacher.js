@@ -1,25 +1,31 @@
 "use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Teacher = void 0;
-var Teacher = /** @class */ (function () {
-    function Teacher(name, email, assignment) {
-        this.name = name;
-        this.email = email;
-        this.assignment = assignment;
+var User_1 = require("./User");
+var Teacher = /** @class */ (function (_super) {
+    __extends(Teacher, _super);
+    function Teacher() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.students = ['student1', 'student2', 'student3'];
+        return _this;
     }
-    Teacher.prototype.register = function () {
-        console.log("Teacher " + this.name + " has registered with succes ussing email " + this.email);
-    };
-    Teacher.prototype.login = function () {
-        console.log("Teacher " + this.name + " login with succes");
-    };
-    Teacher.prototype.delete = function () {
-        console.log("Teacher " + this.name + " deleted with succes");
-    };
-    Teacher.prototype.getStudents = function (student) {
-        console.log("Get student name = " + student.name + " with email = " + student.email);
+    Teacher.prototype.getStudents = function () {
+        console.log("Get Students: " + this.students);
     };
     return Teacher;
-}());
+}(User_1.User));
 exports.Teacher = Teacher;
 //# sourceMappingURL=Teacher.js.map
